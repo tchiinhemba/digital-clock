@@ -12,16 +12,46 @@
 .wrapper {
   width: 100%;
   height: 100vh;
-  background: #05315e;
+  background-image: url(../../assets/img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
 .container {
-  width: 5rem;
-  height: 2rem;
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  color: green;
 }
 
-.time {
-  font-size: 3rem;
+@media only screen and (max-width: 320px) {
+  .time {
+    font-size: 2rem;
+  }
+
+  .date {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .time {
+    font-size: 6rem;
+  }
+
+  .date {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .time {
+    font-size: 8rem;
+  }
+
+  .date {
+    font-size: 4rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

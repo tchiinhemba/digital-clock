@@ -5,24 +5,58 @@
     box-sizing: border-box
     font-family: "Digital"
 
-
 // COLOR PALLETE
 $blue-color-dark: #05315e
-    
+$background-color-clock: #000216
+
 @font-face
     font-family: "Digital"
     src: url("../../font/digital.woff") format("woff")
 
+@mixin responsive($breackpoint)
+    @if $breackpoint == phone
+        @media only screen and (max-width: 320px)
+            @content
+
+    @if $breackpoint == tab
+        @media only screen and (max-width: 768px)
+            @content
+
+    @if $breackpoint == desktop
+        @media only screen and (min-width: 1024px)
+            @content
 
 .wrapper
     width: 100%
     height: 100vh
-    background: $blue-color-dark
+    background-image: url(../../assets/img/background.jpg)
+    background-size: cover
+    background-repeat: no-repeat
 
+    display: flex
+    align-items: center
 
 .container
-    width: 5rem
-    height: 2rem
+    margin-left: 2.5rem
+    display: flex
+    flex-direction: column
+    color: green
+    
 
-.time
-    font-size: 3rem
+@include responsive(phone)
+    .time 
+        font-size: 2rem
+    .date 
+        font-size: 1.5rem
+
+@include responsive(tab)
+    .time 
+        font-size: 6rem
+    .date 
+        font-size: 3rem
+
+@include responsive(desktop)
+    .time 
+        font-size: 8rem
+    .date 
+        font-size: 4rem
